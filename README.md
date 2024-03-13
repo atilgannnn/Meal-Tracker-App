@@ -8,7 +8,7 @@ React JS: Used for building the dynamic and responsive user interface.
 Java (Spring Boot): Employed for the backend server to handle user registration, timestamp recording, and data retrieval.
 MyBatis: Utilized for interacting with the database to manage user records and meal timestamps.
 
-##Features
+### **Features**
 
 - User Registration:
 Users can self-register by providing the necessary details.
