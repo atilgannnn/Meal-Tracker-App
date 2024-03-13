@@ -1,0 +1,26 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mealtracker.mapper.MealMapper">
+
+    <insert id="createMeal" parameterType="com.mealtracker.domain.Meal">
+        INSERT INTO t_meal (user_id, meal_type) VALUES (#{user.id}, #{mealType})
+    </insert>
+
+    <select id="getMealById" resultType="com.mealtracker.domain.Meal">
+        SELECT * FROM meals WHERE id = #{id}
+    </select>
+    <select id="getAllMealListById" resultType="com.mealtracker.domain.Meal">
+        SELECT m.*
+        FROM t_meal m
+        JOIN t_user u ON m.user_id = u.id
+        WHERE u.id = #{userId};
+    </select>
+
+    <update id="updateMeal" parameterType="com.mealtracker.domain.Meal">
+        UPDATE meals SET meal_type = #{mealType} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteMeal" parameterType="long">
+        DELETE FROM meals WHERE id = #{id}
+    </delete>
+
+</mapper>

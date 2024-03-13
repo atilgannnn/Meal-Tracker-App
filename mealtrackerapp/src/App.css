@@ -1,0 +1,96 @@
+.App {
+  text-align: center;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #03094b;
+}
+
+.form {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.button {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #b765ef;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #06f5a9;
+}
+
+button:active {
+  background-color: #b765ef;
+}
+
+.deletebtn {
+  background-color: #435BED;
+  border: none;
+}
+
+.deletebtn:hover {
+  background-color: #06f5a9;
+}
+
+.img-div {
+  margin: 10px;
+}
+
+.signin {
+  display: block;
+}
+
+.signup {
+  display: none;
+}
+
+.desktop {
+  text-align: center;
+}
+.section-div {
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+  position: relative;
+}
+
+.time {
+  position: relative;
+  align-items: stretch;
+}
+
+.selector {
+  width: 250px;
+}
+
+.time-table th {
+  color: white;
+  background-color: #b765ef;
+  width: 200px;
+}
+
+.desktop {
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,77 @@
+server:
+  port: 8080
+  error:
+    include-binding-errors: always
+    include-message: always
+    include-stacktrace: never
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mealtracker_db
+    username: db_user
+    password: db_password
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    initialization: true
+    data: classpath:data.sql
+
+  sql:
+    init:
+      mode: always
+
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  type-aliases-package: com.mealtracker.domain
+  configuration:
+    map-underscore-to-camel-case: true
+    default-interface:
+      implementation-name: dynamic
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+#image
+servlet:
+  multipart:
+    max-file-size: 2MB
+    max-request-size: 2MB
+
+logging:
+  file:
+    name: log/mealtracker.log
+  pattern:
+    file: "%d %-5level [%thread] %logger:%msg%n"
+  level:
+    '[org.springframework.web]' : WARN
+    '[org.hibernate]' : INFO
+    '[com.mealtracker]' : DEBUG
+    org.mybatis: DEBUG
+
+management: #actuator
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+
+mealtracker:
+  app:
+    jwtSecret: meal@!10
+    jwtExpirationMs: 86400000
+
+info:
+  application:
+    name: 'Meal Tracker Backend App'
+    description: 'This is Meal Tracker Backend Project'
+    version: '@project.version@'

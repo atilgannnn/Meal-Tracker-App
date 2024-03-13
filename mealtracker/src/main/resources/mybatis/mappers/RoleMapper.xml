@@ -1,0 +1,26 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mealtracker.mapper.RoleMapper">
+
+    <select id="findById" parameterType="int" resultType="com.mealtracker.domain.Role">
+        SELECT * FROM t_role WHERE id = #{id}
+    </select>
+
+    <select id="findByType" parameterType="string" resultType="com.mealtracker.domain.Role">
+        SELECT * FROM t_role WHERE type = #{type}
+    </select>
+
+    <select id="findAll" resultType="com.mealtracker.domain.Role">
+        SELECT * FROM t_role
+    </select>
+
+    <update id="updateRole" parameterType="com.mealtracker.domain.Role">
+        UPDATE t_role
+        SET type = #{type}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteRole" parameterType="int">
+        DELETE FROM t_role WHERE id = #{id}
+    </delete>
+
+</mapper>
