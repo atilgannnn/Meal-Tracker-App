@@ -20,4 +20,4 @@ Users can log timestamps for their meals, including breakfast, lunch, and dinner
 Users can view a table displaying their recorded meal timestamps.
 
 - Database Schema
-The application uses a Postgresql database with the following schema:
+The application uses a Postgresql database
