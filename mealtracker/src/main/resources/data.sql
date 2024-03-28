@@ -1,7 +1,7 @@
 TRUNCATE TABLE public.t_role;
 INSERT INTO public.t_role(
-	type)
-VALUES ('ROLE_USER');
+	id,type)
+VALUES (1,'ROLE_USER');
 INSERT INTO public.t_role(
-  	type)
- 	VALUES ('ROLE_ADMIN');
+  	id,type)
+ 	VALUES (2,'ROLE_ADMIN');
